@@ -1,7 +1,6 @@
 // Importa el componente (esto registra <mi-ejemplo/>)
 import './component.js';
 
-alert('loaded hello-word');
 // Helper por si querés hacer algo al insertarse en el DOM
 const init = (scope) => {
   const root = (scope || document);

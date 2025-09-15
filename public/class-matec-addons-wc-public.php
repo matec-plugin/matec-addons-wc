@@ -113,7 +113,8 @@ class Matec_Addons_Wc_Public
 	{
 		$srcs = [
 			'mawc-hello-word-index',
-			'mawc-gift-card-form-index'
+			'mawc-gift-card-form-index',
+			'mawc-hero-slider-index',
 		];
 
 
@@ -136,6 +137,7 @@ class Matec_Addons_Wc_Public
 
 		require_once(MAWC_PLUGIN_DIR . 'widgets/hello-word/class-widget-hello-word.php');
 		require_once(MAWC_PLUGIN_DIR . 'widgets/gift-card-form/class-widget-gift-card-form.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/hero-slider/class-widget-hero-slider.php');
 
 		$widgets_manager->register(
 			new Matec_Addons_WC_Widget_Hello_Word()
@@ -143,6 +145,10 @@ class Matec_Addons_Wc_Public
 
 		$widgets_manager->register(
 			new Matec_Addons_WC_Widget_Gift_Card_Form()
+		);
+
+		$widgets_manager->register(
+			new Matec_Addons_WC_Widget_Hero_Slider()
 		);
 
 
