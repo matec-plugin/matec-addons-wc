@@ -36,13 +36,14 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'MATEC_ADDONS_WC_VERSION', '1.0.0' );
+define('MAWC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-matec-addons-wc-activator.php
  */
 function activate_matec_addons_wc() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-matec-addons-wc-activator.php';
+	require_once MAWC_PLUGIN_DIR . 'includes/class-matec-addons-wc-activator.php';
 	Matec_Addons_Wc_Activator::activate();
 }
 
@@ -51,7 +52,7 @@ function activate_matec_addons_wc() {
  * This action is documented in includes/class-matec-addons-wc-deactivator.php
  */
 function deactivate_matec_addons_wc() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-matec-addons-wc-deactivator.php';
+	require_once MAWC_PLUGIN_DIR . 'includes/class-matec-addons-wc-deactivator.php';
 	Matec_Addons_Wc_Deactivator::deactivate();
 }
 
@@ -62,7 +63,7 @@ register_deactivation_hook( __FILE__, 'deactivate_matec_addons_wc' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-matec-addons-wc.php';
+require MAWC_PLUGIN_DIR . 'includes/class-matec-addons-wc.php';
 
 /**
  * Begins execution of the plugin.

@@ -20,7 +20,8 @@
  * @subpackage Matec_Addons_Wc/admin
  * @author     Matec , Tlopez <contacto@matec.com.ar>
  */
-class Matec_Addons_Wc_Admin {
+class Matec_Addons_Wc_Admin
+{
 
 	/**
 	 * The ID of this plugin.
@@ -47,11 +48,11 @@ class Matec_Addons_Wc_Admin {
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct($plugin_name, $version)
+	{
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
 	}
 
 	/**
@@ -59,7 +60,8 @@ class Matec_Addons_Wc_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -73,8 +75,7 @@ class Matec_Addons_Wc_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/matec-addons-wc-admin.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/matec-addons-wc-admin.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -82,7 +83,8 @@ class Matec_Addons_Wc_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -96,8 +98,20 @@ class Matec_Addons_Wc_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/matec-addons-wc-admin.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/matec-addons-wc-admin.js', array('jquery'), $this->version, false);
 	}
 
+	// public function register_widgets($widgets_manager)
+	// {
+	// 	// Asegúrate de que Elementor esté activo
+	// 	if (! did_action('elementor/loaded')) {
+	// 		return;
+	// 	}
+
+	// 	// Incluye el archivo del widget
+	// 	require_once plugin_dir_path(dirname(__FILE__)) . 'widgets/hello-word/class-widget-hello-word.php';
+
+	// 	// Registra el widget
+	// 	$widgets_manager->register(new Matec_Addons_WC_Widget_Hello_Word());
+	// }
 }

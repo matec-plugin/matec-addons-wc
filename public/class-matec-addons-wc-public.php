@@ -20,7 +20,8 @@
  * @subpackage Matec_Addons_Wc/public
  * @author     Matec , Tlopez <contacto@matec.com.ar>
  */
-class Matec_Addons_Wc_Public {
+class Matec_Addons_Wc_Public
+{
 
 	/**
 	 * The ID of this plugin.
@@ -47,11 +48,11 @@ class Matec_Addons_Wc_Public {
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct($plugin_name, $version)
+	{
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
 	}
 
 	/**
@@ -59,7 +60,8 @@ class Matec_Addons_Wc_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -73,8 +75,7 @@ class Matec_Addons_Wc_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/matec-addons-wc-public.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/matec-addons-wc-public.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -82,7 +83,8 @@ class Matec_Addons_Wc_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -96,8 +98,41 @@ class Matec_Addons_Wc_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/matec-addons-wc-public.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/matec-addons-wc-public.js', array('jquery'), $this->version, false);
 	}
 
+	public function register()
+	{
+		// Register a script with type="module"
+		wp_register_script('matec_addons_wc_module', plugin_dir_url(__FILE__) . 'js/matec-addons-wc-module.js', array(), $this->version, true);
+
+		add_filter('script_loader_tag', array($this, 'as_module'), 10, 3);
+	}
+
+	public function as_module($tag, $handle, $src)
+	{
+		// Add type="module" to the script tag for a specific handle.
+		if ('matec_addons_wc_module' !== $tag) {
+			return $tag;
+		}
+		return '<script type="module" src="' . esc_url($src) . '" id="' . esc_attr($handle) . '"></script>';
+	}
+
+	public function register_widgets($widgets_manager)
+	{
+		// Asegúrate de que Elementor esté activo
+		if (! did_action('elementor/loaded')) {
+			return;
+		}
+
+		// TODO: review CARGA DE WIDGETS
+
+		require_once(MAWC_PLUGIN_DIR . 'widgets/hello-word/class-widget-hello-word.php');
+
+		$widgets_manager->register(
+			new Matec_Addons_WC_Widget_Hello_Word()
+		);
+
+		error_log("[MAWC] Widgets registrados");
+	}
 }
