@@ -111,7 +111,13 @@ class Matec_Addons_Wc_Public
 
 	public function as_module($tag, $handle, $src)
 	{
-		if (in_array($handle, ['mawc-hello-word-index'], true)) {
+		$srcs = [
+			'mawc-hello-word-index',
+			'mawc-gift-card-form-index'
+		];
+
+
+		if (in_array($handle, $srcs, true)) {
 			if (false === strpos($tag, 'type=')) {
 				$tag = str_replace('<script ', '<script type="module" ', $tag);
 			}
@@ -129,13 +135,18 @@ class Matec_Addons_Wc_Public
 		// TODO: review CARGA DE WIDGETS
 
 		require_once(MAWC_PLUGIN_DIR . 'widgets/hello-word/class-widget-hello-word.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/gift-card-form/class-widget-gift-card-form.php');
 
 		$widgets_manager->register(
 			new Matec_Addons_WC_Widget_Hello_Word()
 		);
 
+		$widgets_manager->register(
+			new Matec_Addons_WC_Widget_Gift_Card_Form()
+		);
 
-		if (define('MAWC_DEBUG') && MAWC_DEBUG) {
+
+		if (defined('MAWC_DEBUG') && MAWC_DEBUG) {
 			error_log("[MAWC] Widgets registrados desde class-matec-addons-wc-public.php");
 		}
 	}

@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) exit;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 
-class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
+class Matec_Addons_WC_Widget_Gift_Card_Form extends Widget_Base
 {
 
   public function __construct($data = [], $args = null)
@@ -13,27 +13,27 @@ class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
 
     // Registrar el script del widget
     wp_register_script(
-      'mawc-hello-word-index',
-      MAWC_PLUGIN_URL . 'widgets/assets/js/min/hello-word.js',
+      'mawc-gift-card-form-index',
+      MAWC_PLUGIN_URL . 'widgets/assets/js/min/gift-card-form.js',
       array('elementor-frontend'),
       MAWC_VERSION,
       true
     );
 
     if(defined('MAWC_DEBUG') && MAWC_DEBUG){
-      error_log("[MAWC] Cargando script del widget hello-word build");
+      error_log("[MAWC] Cargando script del widget gift-card-form build");
     }
 
   }
 
   public function get_name()
   {
-    return 'mawc-hello-word';
+    return 'mawc-gift-card-form';
   }
 
   public function get_title()
   {
-    return __('Hola mundo', 'MAWC');
+    return __('Gift Card Form', 'MAWC');
   }
 
   public function get_icon()
@@ -50,7 +50,7 @@ class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
   public function get_script_depends()
   {
     // Cargar solo index.js del widget "ejemplo"
-    return ['mawc-hello-word-index'];
+    return ['mawc-gift-card-form-index'];
   }
 
   protected function register_controls()
@@ -59,25 +59,16 @@ class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
       'label' => __('Contenido', 'mi-plugin'),
     ]);
 
-    $this->add_control('texto', [
-      'label' => __('Texto', 'mi-plugin'),
-      'type'  => Controls_Manager::TEXT,
-      'default' => __('Hola desde el widget ejemplo', 'mi-plugin'),
-    ]);
-
     $this->end_controls_section();
   }
 
   protected function render()
   {
-    // $settings = $this->get_settings_for_display();
 
-    // $this->add_render_attribute( 'wrap', 'id', 'ejemplo-' . $this->get_id() );
-    // $this->add_render_attribute( 'wrap', 'class', 'mi-plugin-ejemplo' );
     $post_id = get_the_ID();
 
-    echo '<div class="mawc-hello-word mawc-'.$this->get_id().'">';
-    echo '<hello-word mensaje="' . esc_html($this->get_settings_for_display('texto')) . '" title="'.esc_html(get_the_title($post_id)).'"></hello-word>';
+    echo '<div class="mawc-gift-card-form mawc-'.$this->get_id().'">';
+    echo '<mawc-gift-card-form currency="ARS" locale="es-AR"></mawc-gift-card-form>';
     echo '</div>';
   }
 }

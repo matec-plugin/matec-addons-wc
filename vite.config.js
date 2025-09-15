@@ -11,6 +11,7 @@ export default {
       input: {
         // una entrada por widget que tenga JS
         'hello-word': resolve(__dirname, 'widgets/hello-word/js/index.js'),
+        'gift-card-form': resolve(__dirname, 'widgets/gift-card-form/js/index.js'),
       },
       output: {
         entryFileNames: '[name].js',   // => assets/build/widget-ejemplo.js

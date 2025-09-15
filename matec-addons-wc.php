@@ -40,6 +40,8 @@ define( 'MAWC_VERSION', time());
 define('MAWC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define('MAWC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
+define('MAWC_DEBUG', true);
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-matec-addons-wc-activator.php

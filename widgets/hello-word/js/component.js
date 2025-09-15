@@ -20,12 +20,14 @@ export class HelloWord extends LitElement {
     }
 
     #inc = () => { this.contador += 1; };
+    #dec = () => { this.contador -= 1; };
 
     render() {
         return html`
       <div class="box">
         <p>${this.mensaje} — <span class="num">${this.contador}</span></p>
         <button @click=${this.#inc}>Incrementar</button>
+        <button @click=${this.#dec}>Decrementar</button>
       </div>
     `;
     }
