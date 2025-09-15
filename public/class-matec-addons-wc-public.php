@@ -99,7 +99,6 @@ class Matec_Addons_Wc_Public
 		 */
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/matec-addons-wc-public.js', array('jquery'), $this->version, false);
-
 	}
 
 	public function register()
@@ -135,6 +134,9 @@ class Matec_Addons_Wc_Public
 			new Matec_Addons_WC_Widget_Hello_Word()
 		);
 
-		error_log("[MAWC] Widgets registrados");
+
+		if (define('MAWC_DEBUG') && MAWC_DEBUG) {
+			error_log("[MAWC] Widgets registrados desde class-matec-addons-wc-public.php");
+		}
 	}
 }

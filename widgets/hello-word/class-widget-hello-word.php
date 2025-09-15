@@ -20,7 +20,10 @@ class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
       true
     );
 
-    error_log("[MAWC] Cargando script del widget hello-word build");
+    if(define('MAWC_DEBUG') && MAWC_DEBUG){
+      error_log("[MAWC] Cargando script del widget hello-word build");
+    }
+
   }
 
   public function get_name()
@@ -47,7 +50,6 @@ class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
   public function get_script_depends()
   {
     // Cargar solo index.js del widget "ejemplo"
-    error_log("[MAWC] Cargando script del widget hello-word");
     return ['mawc-hello-word-index'];
   }
 
