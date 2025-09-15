@@ -1,5 +1,16 @@
 {
+  "name": "matec-addons-wc",
+  "version": "1.0.0",
+  "description": "Matec Addons for Web Componenets.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+
   "dependencies": {
     "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "vite": "^7.1.5"
   }
 }

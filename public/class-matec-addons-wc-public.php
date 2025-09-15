@@ -52,7 +52,7 @@ class Matec_Addons_Wc_Public
 	{
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version = time(); // $version;
 	}
 
 	/**
@@ -100,7 +100,6 @@ class Matec_Addons_Wc_Public
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/matec-addons-wc-public.js', array('jquery'), $this->version, false);
 
-		wp_enqueue_script('mawc-hello-word-index', MAWC_PLUGIN_URL . 'widgets/hello-word/js/index.js', array('jquery'), $this->version, false);
 	}
 
 	public function register()
@@ -108,7 +107,7 @@ class Matec_Addons_Wc_Public
 		// Register a script with type="module"
 		wp_register_script('matec_addons_wc_module', plugin_dir_url(__FILE__) . 'js/matec-addons-wc-module.js', array(), $this->version, true);
 
-		add_filter('script_loader_tag', array($this, 'as_module'), 10, 3);
+		// add_filter('script_loader_tag', array($this, 'as_module'), 10, 3);
 	}
 
 	public function as_module($tag, $handle, $src)

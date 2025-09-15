@@ -7,6 +7,22 @@ use Elementor\Controls_Manager;
 class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
 {
 
+  public function __construct($data = [], $args = null)
+  {
+    parent::__construct($data, $args);
+
+    // Registrar el script del widget
+    wp_register_script(
+      'mawc-hello-word-index',
+      MAWC_PLUGIN_URL . 'widgets/assets/js/min/hello-word.js',
+      array(),
+      MAWC_VERSION,
+      true
+    );
+
+    error_log("[MAWC] Cargando script del widget hello-word build");
+  }
+
   public function get_name()
   {
     return 'mawc-hello-word';
@@ -31,6 +47,7 @@ class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
   public function get_script_depends()
   {
     // Cargar solo index.js del widget "ejemplo"
+    error_log("[MAWC] Cargando script del widget hello-word");
     return ['mawc-hello-word-index'];
   }
 
