@@ -37,6 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'MATEC_ADDONS_WC_VERSION', '1.0.0' );
 define('MAWC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define('MAWC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.

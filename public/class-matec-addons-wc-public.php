@@ -99,6 +99,8 @@ class Matec_Addons_Wc_Public
 		 */
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/matec-addons-wc-public.js', array('jquery'), $this->version, false);
+
+		wp_enqueue_script('mawc-hello-word-index', MAWC_PLUGIN_URL . 'widgets/hello-word/js/index.js', array('jquery'), $this->version, false);
 	}
 
 	public function register()
@@ -111,11 +113,12 @@ class Matec_Addons_Wc_Public
 
 	public function as_module($tag, $handle, $src)
 	{
-		// Add type="module" to the script tag for a specific handle.
-		if ('matec_addons_wc_module' !== $tag) {
-			return $tag;
+		if (in_array($handle, ['mawc-hello-word-index'], true)) {
+			if (false === strpos($tag, 'type=')) {
+				$tag = str_replace('<script ', '<script type="module" ', $tag);
+			}
 		}
-		return '<script type="module" src="' . esc_url($src) . '" id="' . esc_attr($handle) . '"></script>';
+		return $tag;
 	}
 
 	public function register_widgets($widgets_manager)

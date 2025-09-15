@@ -56,8 +56,8 @@ class Matec_Addons_WC_Widget_Hello_Word extends Widget_Base
     // $this->add_render_attribute( 'wrap', 'id', 'ejemplo-' . $this->get_id() );
     // $this->add_render_attribute( 'wrap', 'class', 'mi-plugin-ejemplo' );
 
-    echo '<div class="mawc-hello-word">';
-    echo esc_html($this->get_id());
+    echo '<div class="mawc-hello-word mawc-'.$this->get_id().'">';
+    echo '<hello-word mensaje="' . esc_html($this->get_settings_for_display('texto')) . '"></hello-word>';
     echo '</div>';
   }
 }
