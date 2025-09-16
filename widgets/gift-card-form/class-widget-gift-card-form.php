@@ -68,7 +68,7 @@ class Matec_Addons_WC_Widget_Gift_Card_Form extends Widget_Base
     $post_id = get_the_ID();
 
     echo '<div class="mawc-gift-card-form mawc-'.$this->get_id().'">';
-    echo '<mawc-gift-card-form currency="ARS" locale="es-AR"></mawc-gift-card-form>';
+    echo '<mawc-gift-card-form currency="ARS" locale="es-AR" accent="#FEB507"></mawc-gift-card-form>';
     echo '</div>';
   }
 }
