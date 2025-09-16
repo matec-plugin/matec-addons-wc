@@ -13,7 +13,7 @@ export class HeroSlider extends LitElement {
 
   static styles = css`
     :host{ display:block; position:relative; --h: 60vh; --radius: 0; }
-    .hero{ position:relative; overflow:hidden; height:var(--h); border-radius:var(--radius); }
+    .hero{ position:relative; overflow:hidden; height:var(--h); border-radius:var(--radius); margin-bottom:10px; padding-bottom:20px; }
     .track{ display:flex; height:100%; transition: transform .6s ease; }
     .slide{ position:relative; min-width:100%; height:100%; }
     .img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
@@ -32,9 +32,9 @@ export class HeroSlider extends LitElement {
     .arrow:focus{ outline:2px solid #fff; }
 
     /* dots */
-    .dots{ position:absolute; left:0; right:0; bottom:10px; display:flex; gap:8px; justify-content:center; align-items:center; }
-    .dot{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.5); border:1px solid rgba(255,255,255,.8); cursor:pointer; }
-    .dot.active{ background:#fff; transform: scale(1.2); }
+    .dots{ position:absolute; left:0; right:0; bottom:2px; display:flex; gap:8px; justify-content:center; align-items:center; }
+    .dot{ width:8px; height:8px; border-radius:50%; background:rgba(122,122,122,.5); border:1px solid rgba(122,122,122,.5); cursor:pointer; }
+    .dot.active{ background:#272727; transform: scale(1.2); }
 
     @media (max-width: 700px){ :host{ --h: 48vh } }
   `;
