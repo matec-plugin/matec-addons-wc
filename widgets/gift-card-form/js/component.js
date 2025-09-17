@@ -208,7 +208,7 @@ export class GiftCardForm extends LitElement {
     return html`
       <div class="header" role="group" aria-label="Progreso de compra">
         <div class="title-row">
-          <h2>Comprar Gift Cardd</h2>
+          <h2>Comprar Gift Card</h2>
           <div class="subtitle">Paso ${this.step} de 3</div>
         </div>
         <div class="progress" style=${`--p:${this.#stepPercent()}`} aria-hidden="true"><i></i></div>
