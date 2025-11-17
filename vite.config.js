@@ -13,6 +13,7 @@ export default {
         'hello-word': resolve(__dirname, 'widgets/hello-word/js/index.js'),
         'gift-card-form': resolve(__dirname, 'widgets/gift-card-form/js/index.js'),
         'hero-slider': resolve(__dirname, 'widgets/hero-slider/js/index.js'),
+        'modality-viewer': resolve(__dirname, 'widgets/modality-viewer/js/index.js'),
       },
       output: {
         entryFileNames: '[name].js',   // => assets/build/widget-ejemplo.js

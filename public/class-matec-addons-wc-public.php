@@ -115,6 +115,7 @@ class Matec_Addons_Wc_Public
 			'mawc-hello-word-index',
 			'mawc-gift-card-form-index',
 			'mawc-hero-slider-index',
+			'mawc-modality-viewer-index',
 		];
 
 
@@ -138,6 +139,7 @@ class Matec_Addons_Wc_Public
 		require_once(MAWC_PLUGIN_DIR . 'widgets/hello-word/class-widget-hello-word.php');
 		require_once(MAWC_PLUGIN_DIR . 'widgets/gift-card-form/class-widget-gift-card-form.php');
 		require_once(MAWC_PLUGIN_DIR . 'widgets/hero-slider/class-widget-hero-slider.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/modality-viewer/class-widget-modality-viewer.php');
 
 		$widgets_manager->register(
 			new Matec_Addons_WC_Widget_Hello_Word()
@@ -151,6 +153,9 @@ class Matec_Addons_Wc_Public
 			new Matec_Addons_WC_Widget_Hero_Slider()
 		);
 
+		$widgets_manager->register(
+			new Matec_Addons_WC_Widget_Modality_Viewer()
+		);
 
 		if (defined('MAWC_DEBUG') && MAWC_DEBUG) {
 			error_log("[MAWC] Widgets registrados desde class-matec-addons-wc-public.php");
