@@ -1,6 +1,6 @@
 // Hero Slider - Lit (compatible ES2019 / sin campos privados)
 // CDN: import { LitElement, html, css } from 'https://esm.run/lit';
-import { LitElement, html, css } from 'Lit';
+import { LitElement, html, css } from 'lit';
 
 export class HeroSlider extends LitElement {
   static properties = {

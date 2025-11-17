@@ -1,5 +1,5 @@
 // Opción sin build: import directo desde CDN ESM
-import { LitElement, html, css } from 'Lit';
+import { LitElement, html, css } from 'lit';
 
 export class HelloWord extends LitElement {
     static properties = {
