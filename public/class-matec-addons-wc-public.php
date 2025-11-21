@@ -116,6 +116,8 @@ class Matec_Addons_Wc_Public
 			'mawc-gift-card-form-index',
 			'mawc-hero-slider-index',
 			'mawc-modality-viewer-index',
+			'mawc-program-viewer-index',
+			'mawc-cohort-selector-index',
 		];
 
 
@@ -140,6 +142,10 @@ class Matec_Addons_Wc_Public
 		require_once(MAWC_PLUGIN_DIR . 'widgets/gift-card-form/class-widget-gift-card-form.php');
 		require_once(MAWC_PLUGIN_DIR . 'widgets/hero-slider/class-widget-hero-slider.php');
 		require_once(MAWC_PLUGIN_DIR . 'widgets/modality-viewer/class-widget-modality-viewer.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/program-viewer/class-widget-program-viewer.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/post-type-label/class-widget-post-type-label.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/cohort-selector/class-widget-cohort-selector.php');
+
 
 		$widgets_manager->register(
 			new Matec_Addons_WC_Widget_Hello_Word()
@@ -155,6 +161,18 @@ class Matec_Addons_Wc_Public
 
 		$widgets_manager->register(
 			new Matec_Addons_WC_Widget_Modality_Viewer()
+		);
+
+		$widgets_manager->register(
+			new Matec_Addons_WC_Widget_Program_Viewer()
+		);
+
+		$widgets_manager->register(
+			new Matec_Addons_WC_Widget_Post_Type_Label()
+		);
+
+		$widgets_manager->register(
+			new Matec_Addons_WC_Widget_Cohort_Selector()
 		);
 
 		if (defined('MAWC_DEBUG') && MAWC_DEBUG) {

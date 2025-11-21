@@ -45,7 +45,7 @@ export class GiftCardForm extends LitElement {
 
       /* tema */
       --mawc-accent: var(--mawc-accent-global, #0f172a);
-      --mawc-on-accent: var(--mawc-on-accent-global, #ffffff);
+      --mawc-on-accent: var(--mawc-on-accent-global, #272727);
       --mawc-accent-ring: var(--mawc-accent-ring-global, rgba(15,23,42,.12));
     }
 
