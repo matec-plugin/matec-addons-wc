@@ -137,12 +137,12 @@ class Matec_Addons_Wc_Public
 		}
 
 		// TODO: review CARGA DE WIDGETS
-		require_once(MAWC_PLUGIN_DIR . 'widgets/gift-card-form/class-widget-gift-card-form.php');
-		require_once(MAWC_PLUGIN_DIR . 'widgets/hero-slider/class-widget-hero-slider.php');
-		require_once(MAWC_PLUGIN_DIR . 'widgets/modality-viewer/class-widget-modality-viewer.php');
-		require_once(MAWC_PLUGIN_DIR . 'widgets/program-viewer/class-widget-program-viewer.php');
-		require_once(MAWC_PLUGIN_DIR . 'widgets/post-type-label/class-widget-post-type-label.php');
-		require_once(MAWC_PLUGIN_DIR . 'widgets/cohort-selector/class-widget-cohort-selector.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/gift-card-form/class-widget.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/hero-slider/class-widget.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/modality-viewer/class-widget.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/program-viewer/class-widget.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/post-type-label/class-widget.php');
+		require_once(MAWC_PLUGIN_DIR . 'widgets/cohort-selector/class-widget.php');
 
 
 
