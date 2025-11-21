@@ -75,7 +75,7 @@ class Matec_Addons_Wc_Public
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/matec-addons-wc-public.css', array(), $this->version, 'all');
+		//wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/matec-addons-wc-public.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -98,13 +98,13 @@ class Matec_Addons_Wc_Public
 		 * class.
 		 */
 
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/matec-addons-wc-public.js', array('jquery'), $this->version, false);
+		//wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/matec-addons-wc-public.js', array('jquery'), $this->version, false);
 	}
 
 	public function register()
 	{
 		// Register a script with type="module"
-		wp_register_script('matec_addons_wc_module', plugin_dir_url(__FILE__) . 'js/matec-addons-wc-module.js', array(), $this->version, true);
+		//wp_register_script('matec_addons_wc_module', plugin_dir_url(__FILE__) . 'js/matec-addons-wc-module.js', array(), $this->version, true);
 
 		// add_filter('script_loader_tag', array($this, 'as_module'), 10, 3);
 	}
